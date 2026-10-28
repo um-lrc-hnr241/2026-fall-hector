@@ -110,6 +110,23 @@ h2 {
   line-height: 1.45;
 }
 
+.hero {
+  margin: 0 0 2rem;
+  padding: clamp(2rem, 7vw, 4.5rem);
+  color: #ffffff;
+  background-color: var(--accent);
+  background-image: linear-gradient(rgba(0, 25, 48, 0.86), rgba(0, 25, 48, 0.86)), url("images/Deep_dream_image");
+  background-position: center;
+  background-size: cover;
+  border-bottom: 5px solid var(--maize);
+}
+
+.hero h1,
+.hero .lead,
+.hero .eyebrow {
+  color: #ffffff;
+}
+
 .eyebrow {
   margin-bottom: -0.75rem;
   color: var(--muted);
