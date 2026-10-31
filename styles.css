@@ -78,7 +78,7 @@ nav ul {
 }
 
 .site-header nav a {
-  padding: 0.4rem 0.65rem;
+  padding: 0.2rem 0.65rem;
   color: #ffffff;
   text-decoration: none;
   transition: color 0.3s ease;
@@ -91,7 +91,7 @@ nav ul {
 .site-header nav a[aria-current="page"] {
   color: var(--accent);
   background: var(--background);
-  border-radius: 0.45rem;
+  border-radius: 0;
   font-weight: 700;
 }
 
