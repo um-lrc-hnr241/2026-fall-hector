@@ -7,7 +7,7 @@
   --accent: #00274c;
   --maize: #ffcb05;
   --border: #c9c5bb;
-  --max-width: 62rem;
+  --max-width: none;
 }
 
 *,
@@ -28,9 +28,10 @@ body {
 .site-header,
 main,
 .site-footer {
+  width: 100%;
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 1.5rem 1.25rem;
+  padding: 1.5rem clamp(1rem, 4vw, 4rem);
 }
 
 .site-header {
@@ -118,7 +119,7 @@ h2 {
   padding: clamp(2rem, 7vw, 4.5rem);
   color: #ffffff;
   background-color: var(--accent);
-  background-image: linear-gradient(rgba(0, 25, 48, 0.86), rgba(0, 25, 48, 0.86)), url("images/Deep_dream_image");
+  background-image: linear-gradient(rgba(0, 25, 48, 0.58), rgba(0, 25, 48, 0.58)), url("images/Deep_dream_image");
   background-position: center;
   background-size: cover;
   border-bottom: 5px solid var(--maize);
@@ -149,13 +150,14 @@ h2 {
   display: flex;
   align-items: center;
   gap: 1.5rem;
-  max-width: 48rem;
+  width: 100%;
+  max-width: none;
   margin: 1.5rem 0;
   padding: 1rem;
   overflow: hidden;
-  color: var(--text);
+  color: #ffffff;
   text-decoration: none;
-  background: #ffffff;
+  background: var(--accent);
   border: 1px solid var(--border);
   border-radius: 0.75rem;
   box-shadow: 0 0.25rem 0.75rem rgba(0, 39, 76, 0.12);
@@ -170,9 +172,10 @@ h2 {
 
 .profile-card img {
   display: block;
-  width: min(38%, 12rem);
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
+  width: min(30%, 20rem);
+  height: auto;
+  flex: 0 1 auto;
+  object-fit: contain;
   border-radius: 0.5rem;
 }
 
@@ -182,15 +185,98 @@ h2 {
 }
 
 .profile-card-title {
-  color: var(--accent);
+  color: #ffffff;
   font-family: Michroma, "Arial Narrow", sans-serif;
   font-size: 1.15rem;
   font-weight: 700;
 }
 
 .profile-card:focus-visible {
-  outline: 3px solid var(--accent);
+  outline: 3px solid var(--maize);
   outline-offset: 4px;
+}
+
+.music-widget {
+  position: fixed;
+  right: clamp(1rem, 3vw, 2rem);
+  bottom: clamp(1rem, 3vw, 2rem);
+  z-index: 10;
+  display: grid;
+  justify-items: end;
+  gap: 0.75rem;
+}
+
+.music-toggle,
+.music-close {
+  min-width: 3rem;
+  min-height: 3rem;
+  border: 2px solid var(--maize);
+  border-radius: 999px;
+  color: #ffffff;
+  background: var(--accent);
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.music-toggle {
+  box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.25);
+  font-size: 1.5rem;
+}
+
+.music-toggle:focus-visible,
+.music-close:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.music-panel {
+  width: min(22rem, calc(100vw - 2rem));
+  padding: 0.75rem;
+  color: #ffffff;
+  background: var(--accent);
+  border: 1px solid var(--maize);
+  border-radius: 0.75rem;
+  box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  transform: translateY(0.75rem);
+  transition: opacity 220ms ease, transform 220ms ease;
+}
+
+.music-panel.is-open {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.music-panel[hidden] {
+  display: none;
+}
+
+.music-panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.music-panel-header p {
+  margin: 0;
+  font-weight: 700;
+}
+
+.music-close {
+  min-width: 2.5rem;
+  min-height: 2.5rem;
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.music-panel iframe {
+  display: block;
+  width: 100%;
+  border: 0;
+  border-radius: 0.5rem;
 }
 
 main section {
@@ -242,7 +328,8 @@ video {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .profile-card {
+  .profile-card,
+  .music-panel {
     transition: none;
   }
 
