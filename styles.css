@@ -55,6 +55,19 @@ main,
   text-decoration: none;
 }
 
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.brand-logo {
+  width: 2.75rem;
+  height: 2.75rem;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
 nav ul {
   display: flex;
   flex-wrap: wrap;
