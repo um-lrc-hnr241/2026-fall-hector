@@ -47,9 +47,45 @@
 
     <section aria-labelledby="theme-heading">
       <h2 id="theme-heading">Listen: the Westworld theme</h2>
-      <p>The planning document identifies the <cite>Westworld</cite> theme song for this project. <a href="https://lnk.to/ww1" target="_blank" rel="noopener noreferrer">Listen to the Westworld theme song</a> (opens an external music page).</p>
+      <p>Listen to the Westworld Main Title Theme by Ramin Djawadi using the music button at the bottom-right of the screen. Playback starts only when you press Play.</p>
     </section>
   </main>
+
+  <div class="music-widget">
+    <section class="music-panel" id="music-panel" aria-label="Westworld theme music player" hidden>
+      <div class="music-panel-header">
+        <p>Westworld Main Title Theme</p>
+        <button class="music-close" id="music-close" type="button" aria-label="Close music player">×</button>
+      </div>
+      <iframe title="Spotify player: Westworld Main Title Theme by Ramin Djawadi" src="https://open.spotify.com/embed/track/2sw8teIvVMRZKKYD5p795f?utm_source=generator" width="100%" height="152" loading="lazy" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+    </section>
+    <button class="music-toggle" id="music-toggle" type="button" aria-label="Open Westworld theme music player" aria-controls="music-panel" aria-expanded="false">♫</button>
+  </div>
+
+  <script>
+    const musicToggle = document.getElementById("music-toggle");
+    const musicPanel = document.getElementById("music-panel");
+    const musicClose = document.getElementById("music-close");
+
+    function openMusicPlayer() {
+      musicPanel.hidden = false;
+      requestAnimationFrame(() => musicPanel.classList.add("is-open"));
+      musicToggle.setAttribute("aria-expanded", "true");
+      musicClose.focus();
+    }
+
+    function closeMusicPlayer() {
+      musicPanel.classList.remove("is-open");
+      musicToggle.setAttribute("aria-expanded", "false");
+      window.setTimeout(() => {
+        musicPanel.hidden = true;
+        musicToggle.focus();
+      }, 220);
+    }
+
+    musicToggle.addEventListener("click", openMusicPlayer);
+    musicClose.addEventListener("click", closeMusicPlayer);
+  </script>
 
   <footer class="site-footer">
     <p>A student project on <cite>Westworld</cite>, consciousness, and the self.</p>
