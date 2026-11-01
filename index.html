@@ -52,31 +52,10 @@
 
     <section aria-labelledby="theme-heading">
       <h2 id="theme-heading">Listen: the Westworld theme</h2>
-      <p>Listen to the Westworld Main Title Theme by Ramin Djawadi using the music button at the bottom-right of the screen. Playback starts only when you press Play.</p>
-    </section>
-  </main>
-
-  <div class="music-widget">
-    <section class="music-panel" id="music-panel" aria-label="Westworld theme music player" hidden>
-      <div class="music-panel-header">
-        <p>Westworld Main Title Theme</p>
-      </div>
+      <p>Listen to the Westworld Main Title Theme by Ramin Djawadi. Playback starts only when you press Play.</p>
       <iframe title="Spotify player: Westworld Main Title Theme by Ramin Djawadi" src="https://open.spotify.com/embed/track/2sw8teIvVMRZKKYD5p795f?utm_source=generator" width="100%" height="152" loading="lazy" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin"></iframe>
     </section>
-    <button class="music-toggle" id="music-toggle" type="button" aria-label="Toggle Westworld theme music player" aria-controls="music-panel" aria-expanded="false"><img src="images/Spotify_logo" alt=""><span>Theme song</span></button>
-  </div>
-
-  <script>
-    const musicToggle = document.getElementById("music-toggle");
-    const musicPanel = document.getElementById("music-panel");
-
-    musicToggle.addEventListener("click", () => {
-      const isOpening = musicPanel.hidden;
-      musicPanel.hidden = !isOpening;
-      musicPanel.classList.toggle("is-open", isOpening);
-      musicToggle.setAttribute("aria-expanded", String(isOpening));
-    });
-  </script>
+  </main>
 
   <footer class="site-footer">
     <p>A student project on <cite>Westworld</cite>, consciousness, and the self.</p>
