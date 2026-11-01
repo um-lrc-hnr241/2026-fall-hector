@@ -37,12 +37,12 @@ main,
 .site-header {
   display: flex;
   flex-wrap: wrap;
-  align-items: baseline;
+  align-items: center;
   justify-content: space-between;
   gap: 1rem;
   background: var(--accent);
   color: #ffffff;
-  border-bottom: 5px solid var(--maize);
+  border-bottom: 3px solid var(--maize);
 }
 
 .site-title {
@@ -139,14 +139,14 @@ h2 {
 
 .hero {
   width: 100vw;
-  margin: 0 0 2rem calc(50% - 50vw);
+  margin: -1.5rem 0 2rem calc(50% - 50vw);
   padding: clamp(2rem, 7vw, 4.5rem);
   color: #ffffff;
   background-color: var(--accent);
   background-image: linear-gradient(rgba(0, 25, 48, 0.58), rgba(0, 25, 48, 0.58)), url("images/Deep_dream_image");
   background-position: center;
   background-size: cover;
-  border-bottom: 5px solid var(--maize);
+  border-bottom: 3px solid var(--maize);
 }
 
 .hero h1,
@@ -337,7 +337,11 @@ video {
   .site-header,
   main,
   .site-footer {
-    padding: 1.25rem 1rem;
+    padding: 0.75rem 1rem;
+  }
+
+  .hero {
+    margin-top: -1.25rem;
   }
 
   .profile-card {
