@@ -233,10 +233,10 @@ h2 {
   overflow: hidden;
   color: #ffffff;
   text-decoration: none;
-  background: var(--accent);
-  border: 1px solid var(--border);
-  border-radius: 0.75rem;
-  box-shadow: 0 0.25rem 0.75rem rgba(0, 39, 76, 0.12);
+  background: linear-gradient(120deg, #00345f 0%, var(--accent) 68%, #001a33 100%);
+  border: 1px solid rgba(246, 243, 234, 0.45);
+  border-radius: 0.85rem 0.2rem 0.85rem 0.2rem;
+  box-shadow: 0 0.25rem 0.75rem rgba(0, 39, 76, 0.2);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -249,9 +249,10 @@ h2 {
 .profile-card img {
   display: block;
   width: min(30%, 20rem);
-  height: auto;
+  height: 13rem;
   flex: 0 1 auto;
-  object-fit: contain;
+  object-fit: cover;
+  background: transparent;
   border-radius: 0.5rem;
 }
 
@@ -265,6 +266,25 @@ h2 {
   font-family: Michroma, "Arial Narrow", sans-serif;
   font-size: 1.15rem;
   font-weight: 700;
+}
+
+.profile-card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin-top: 0.25rem;
+  color: var(--maize);
+  font-weight: 700;
+}
+
+.profile-card-link span {
+  font-size: 1.25em;
+  transition: transform 0.3s ease;
+}
+
+.profile-card:hover .profile-card-link span,
+.profile-card:focus-visible .profile-card-link span {
+  transform: translateX(0.2rem);
 }
 
 .profile-card:focus-visible {
@@ -408,11 +428,13 @@ video {
 
   .profile-card img {
     width: 34%;
+    height: 10rem;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
   .profile-card,
+  .profile-card-link span,
   .music-panel,
   .hero-button {
     transition: none;
