@@ -1,12 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Michroma&family=Roboto:wght@400;500;700&display=swap");
 
 :root {
-  --text: #17212b;
-  --muted: #46515b;
-  --background: #f6f3ea;
-  --accent: #00274c;
-  --maize: #ffcb05;
-  --border: #c9c5bb;
+  --text: #F6F3EA;
+  --muted: #9DBFBE;
+  --background: #0B1419;
+  --accent: #18313A;
+  --maize: #9DBFBE;
+  --border: #355057;
   --max-width: none;
 }
 
@@ -35,14 +35,17 @@ main,
 }
 
 .site-header {
+  min-height: 75px;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
   background: var(--accent);
-  color: #ffffff;
-  border-bottom: 2px solid var(--maize);
+  color: var(--text);
+  border-bottom: 1px solid var(--border);
 }
 
 .home-page .site-header {
@@ -98,14 +101,14 @@ nav ul {
 }
 
 .site-header nav a[aria-current="page"] {
-  color: var(--accent);
-  background: var(--background);
+  color: #0B1419;
+  background: #F6F3EA;
   border-radius: 0;
   font-weight: 700;
 }
 
 .site-header nav a[aria-current="page"]:hover {
-  color: var(--muted);
+  color: #18313A;
 }
 
 a {
@@ -148,28 +151,61 @@ h2 {
 
 .hero {
   width: 100vw;
+  min-height: 680px;
   margin: -1.5rem 0 2rem calc(50% - 50vw);
-  padding: clamp(9rem, 12vw, 10rem) clamp(2rem, 7vw, 4.5rem) clamp(2rem, 7vw, 4.5rem);
-  color: #ffffff;
-  background-color: var(--accent);
-  background-image: linear-gradient(90deg, rgba(0, 25, 48, 0.84) 0%, rgba(0, 25, 48, 0.58) 48%, rgba(0, 25, 48, 0.04) 100%), url("images/Deep_dream_image");
-  background-position: center;
-  background-size: cover;
-  border-bottom: 2px solid var(--maize);
+  padding: 7.5rem clamp(1.5rem, 7vw, 5rem) 3rem;
+  display: grid;
+  grid-template-columns: minmax(0, 55fr) minmax(0, 45fr);
+  align-items: center;
+  gap: clamp(1.5rem, 4vw, 4rem);
+  overflow: hidden;
+  color: var(--text);
+  background: #0B1419;
+  border-bottom: 1px solid var(--border);
+}
+
+.hero-copy {
+  position: relative;
+  z-index: 1;
+  max-width: 46rem;
 }
 
 .hero h1,
 .hero .lead,
 .hero .eyebrow {
-  color: #ffffff;
+  color: var(--text);
+}
+
+.hero h1 {
+  margin-top: 0.75rem;
 }
 
 .hero .eyebrow {
   margin-bottom: 0;
+  color: var(--muted);
 }
 
 .hero .lead {
-  max-width: 48rem;
+  max-width: 42rem;
+}
+
+.hero-visual {
+  position: relative;
+  display: grid;
+  min-width: 0;
+  min-height: 360px;
+  place-items: center;
+  background: radial-gradient(ellipse at center, rgba(24, 49, 58, 0.42), transparent 72%);
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 18%, #000 88%, transparent 100%);
+  mask-image: linear-gradient(90deg, transparent 0%, #000 18%, #000 88%, transparent 100%);
+}
+
+.hero-visual img {
+  display: block;
+  width: 100%;
+  max-width: 620px;
+  max-height: 480px;
+  object-fit: contain;
 }
 
 .hero-actions {
@@ -182,18 +218,18 @@ h2 {
 .hero-button {
   display: inline-block;
   padding: 0.75rem 1.25rem;
-  border: 1px solid var(--background);
+  border: 1px solid var(--muted);
   border-radius: 0.2rem;
-  color: var(--background);
+  color: var(--text);
   font-weight: 700;
   text-decoration: none;
   transition: transform 180ms ease, box-shadow 180ms ease, background-color 180ms ease;
 }
 
 .hero-button-primary {
-  border-color: var(--maize);
-  color: var(--accent);
-  background: var(--maize);
+  border-color: var(--muted);
+  color: #0B1419;
+  background: var(--muted);
 }
 
 .hero-button-secondary {
@@ -203,17 +239,17 @@ h2 {
 .hero-button:hover,
 .hero-button:focus-visible {
   transform: translateY(-4px);
-  box-shadow: 0 0.4rem 0.9rem rgba(0, 0, 0, 0.28);
+  box-shadow: 0 0.4rem 0.9rem rgba(0, 0, 0, 0.42);
 }
 
 .hero-button-primary:hover,
 .hero-button-primary:focus-visible {
-  background: #f2bf00;
+  background: #F6F3EA;
 }
 
 .hero-button-secondary:hover,
 .hero-button-secondary:focus-visible {
-  background: rgba(246, 243, 234, 0.12);
+  background: rgba(157, 191, 190, 0.14);
 }
 
 .eyebrow {
@@ -242,7 +278,7 @@ h2 {
   overflow: hidden;
   color: #ffffff;
   text-decoration: none;
-  background: linear-gradient(120deg, #00345f 0%, var(--accent) 68%, #001a33 100%);
+  background: linear-gradient(120deg, #18313A 0%, #0B1419 78%, #102229 100%);
   border: 1px solid rgba(246, 243, 234, 0.45);
   border-radius: 0.85rem 0.2rem 0.85rem 0.2rem;
   box-shadow: 0 0.25rem 0.75rem rgba(0, 39, 76, 0.2);
@@ -431,8 +467,19 @@ video {
   }
 
   .hero {
+    min-height: 0;
+    grid-template-columns: 1fr;
+    gap: 1rem;
     margin-top: -1.25rem;
     padding-top: 10rem;
+  }
+
+  .hero-visual {
+    min-height: 220px;
+  }
+
+  .hero-visual img {
+    max-height: 320px;
   }
 
   .hero-actions {
