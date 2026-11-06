@@ -292,12 +292,11 @@ h2 {
   margin: 1.5rem 0;
   padding: 1rem;
   overflow: hidden;
-  color: #F6F3EA;
+  color: #ffffff;
   text-decoration: none;
-  background: #0B1419;
-  border: 1px solid #9DBFBE;
-  border-radius: 0;
-  clip-path: polygon(12px 0, 100% 0, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0 100%, 0 12px);
+  background: linear-gradient(120deg, #18313A 0%, #0B1419 78%, #102229 100%);
+  border: 1px solid rgba(246, 243, 234, 0.45);
+  border-radius: 0.85rem 0.2rem 0.85rem 0.2rem;
   box-shadow: 0 0.25rem 0.75rem rgba(0, 39, 76, 0.2);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -323,15 +322,8 @@ h2 {
   gap: 0.5rem;
 }
 
-.profile-card-label {
-  color: var(--muted);
-  font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-}
-
 .profile-card-title {
-  color: #F6F3EA;
+  color: #ffffff;
   font-family: Michroma, "Arial Narrow", sans-serif;
   font-size: 1.15rem;
   font-weight: 700;
@@ -342,7 +334,7 @@ h2 {
   align-items: center;
   gap: 0.45rem;
   margin-top: 0.25rem;
-  color: var(--maize);
+  color: #9DBFBE;
   font-weight: 700;
 }
 
