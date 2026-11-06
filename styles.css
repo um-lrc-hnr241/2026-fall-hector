@@ -353,6 +353,59 @@ h2 {
   outline-offset: 4px;
 }
 
+.qualities-section {
+  margin: 2rem 0;
+}
+
+.qualities-section .eyebrow {
+  margin-bottom: 0.5rem;
+  color: var(--muted);
+}
+
+.qualities-section h2 {
+  margin-top: 0;
+  color: var(--text);
+}
+
+.qualities-panel {
+  padding: 0.5rem 1.5rem;
+  border: 1px solid var(--muted);
+  background: var(--background);
+  clip-path: polygon(12px 0, 100% 0, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0 100%, 0 12px);
+}
+
+.qualities-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.qualities-list li {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  min-height: 4.25rem;
+  padding: 0.9rem 0.75rem;
+  color: var(--text);
+  font-family: Roboto, Arial, sans-serif;
+  transition: background-color 180ms ease;
+}
+
+.qualities-list li + li {
+  border-top: 1px solid rgba(157, 191, 190, 0.55);
+}
+
+.qualities-list li:hover {
+  background: rgba(157, 191, 190, 0.12);
+}
+
+.qualities-number {
+  flex: 0 0 2.5rem;
+  color: var(--muted);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+
 .music-widget {
   position: fixed;
   right: 24px;
