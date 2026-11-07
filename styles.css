@@ -169,6 +169,23 @@ h2 {
   border-bottom: 1px solid var(--border);
 }
 
+.home-panels {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+  align-items: stretch;
+  gap: 24px;
+  width: 92vw;
+  margin: -2rem 0 2rem calc(50% - 46vw);
+  padding: 1.5rem 0;
+  border-top: 1px solid var(--border);
+  background: var(--background);
+}
+
+.home-page .hero + .home-panels {
+  margin-top: -2rem;
+}
+
 .hero-copy {
   position: relative;
   z-index: 1;
@@ -289,14 +306,16 @@ h2 {
   gap: 1.5rem;
   width: 100%;
   max-width: none;
-  margin: 1.5rem 0;
+  min-height: 100%;
+  margin: 0;
   padding: 1rem;
   overflow: hidden;
   color: #ffffff;
   text-decoration: none;
   background: linear-gradient(120deg, #18313A 0%, #0B1419 78%, #102229 100%);
   border: 1px solid rgba(246, 243, 234, 0.45);
-  border-radius: 0.85rem 0.2rem 0.85rem 0.2rem;
+  border-radius: 0;
+  clip-path: polygon(12px 0, calc(100% - 12px) 0, 100% 12px, 100% calc(100% - 12px), calc(100% - 12px) 100%, 12px 100%, 0 calc(100% - 12px), 0 12px);
   box-shadow: 0 0.25rem 0.75rem rgba(0, 39, 76, 0.2);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -354,7 +373,13 @@ h2 {
 }
 
 .qualities-section {
-  margin: 2rem 0;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 1rem 1.5rem;
+  border: 1px solid rgba(157, 191, 190, 0.65);
+  background: linear-gradient(120deg, #18313A 0%, #0B1419 78%, #102229 100%);
+  clip-path: polygon(12px 0, calc(100% - 12px) 0, 100% 12px, 100% calc(100% - 12px), calc(100% - 12px) 100%, 12px 100%, 0 calc(100% - 12px), 0 12px);
 }
 
 .qualities-section .eyebrow {
@@ -368,10 +393,11 @@ h2 {
 }
 
 .qualities-panel {
-  padding: 0.5rem 1.5rem;
-  border: 1px solid var(--muted);
-  background: var(--background);
-  clip-path: polygon(12px 0, 100% 0, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0 100%, 0 12px);
+  flex: 1;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  clip-path: none;
 }
 
 .qualities-list {
@@ -498,6 +524,16 @@ h2 {
   border-radius: 0.5rem;
 }
 
+.investigation {
+  max-width: 800px;
+  margin: 2.5rem auto;
+}
+
+.investigation h2,
+.investigation h3 {
+  color: var(--text);
+}
+
 main section {
   margin: 2rem 0;
 }
@@ -533,6 +569,11 @@ video {
   main,
   .site-footer {
     padding: 0.75rem 1rem;
+  }
+
+  .home-panels {
+    grid-template-columns: 1fr;
+    gap: 24px;
   }
 
   .hero {
