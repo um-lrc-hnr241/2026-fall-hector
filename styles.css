@@ -90,8 +90,10 @@ nav ul {
 }
 
 .site-header nav a {
-  padding: 0.2rem 0.65rem;
+  display: inline-block;
+  padding: 0.6875rem 1.125rem;
   color: #ffffff;
+  text-align: center;
   text-decoration: none;
   transition: color 0.3s ease;
 }
@@ -101,7 +103,7 @@ nav ul {
 }
 
 .site-header nav a[aria-current="page"] {
-  color: #0B1419;
+  color: #00274C;
   background: #F6F3EA;
   border-radius: 0;
   clip-path: polygon(12px 0, 100% 0, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0 100%, 0 12px);
@@ -109,7 +111,7 @@ nav ul {
 }
 
 .site-header nav a[aria-current="page"]:hover {
-  color: #18313A;
+  color: #00274C;
 }
 
 a {
@@ -533,12 +535,48 @@ h2 {
 }
 
 .investigation {
-  max-width: 800px;
-  margin: 2.5rem auto;
+  width: 100vw;
+  min-height: 130px;
+  margin: 0 0 2rem calc(50% - 50vw);
+  padding: 1.25rem clamp(1.5rem, 7vw, 5rem);
+  display: grid;
+  grid-template-columns: minmax(15rem, 0.8fr) minmax(0, 1.2fr);
+  align-items: center;
+  gap: clamp(1.5rem, 4vw, 3.5rem);
+  color: var(--text);
+  background: var(--background);
+  border-top: 1px solid var(--muted);
+  border-bottom: 1px solid var(--muted);
 }
 
-.investigation h2,
-.investigation h3 {
+.investigation-heading {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: 4rem;
+  padding: 0 2rem 0 1.5rem;
+  border-right: 1px solid var(--muted);
+}
+
+.investigation-heading::before {
+  position: absolute;
+  left: 0;
+  width: 1.5rem;
+  height: 1px;
+  content: "";
+  background: var(--muted);
+  transform: rotate(-55deg);
+}
+
+.investigation h2 {
+  margin: 0;
+  color: var(--text);
+  font-size: clamp(1.2rem, 2vw, 1.6rem);
+  line-height: 1.5;
+}
+
+.investigation p {
+  margin: 0;
   color: var(--text);
 }
 
@@ -644,6 +682,20 @@ video {
 
   .profile-card-copy {
     padding: 0.75rem;
+  }
+}
+
+@media (max-width: 40rem) {
+  .investigation {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .investigation-heading {
+    min-height: auto;
+    padding: 0 0 0.75rem 1.5rem;
+    border-right: 0;
+    border-bottom: 1px solid var(--muted);
   }
 }
 
