@@ -1,4 +1,33 @@
 (() => {
+  const audioSection = document.querySelector(".theme-audio-section");
+  if (audioSection) {
+    const button = audioSection.querySelector(".theme-audio-toggle");
+    const playerPanel = audioSection.querySelector(".theme-audio-player");
+
+    button.addEventListener("click", () => {
+      const isOpen = button.getAttribute("aria-expanded") === "true";
+      if (isOpen) {
+        button.setAttribute("aria-expanded", "false");
+        playerPanel.replaceChildren();
+        playerPanel.hidden = true;
+        return;
+      }
+
+      const player = document.createElement("iframe");
+      player.title = "Spotify player: Westworld Main Title Theme by Ramin Djawadi";
+      player.src = "https://open.spotify.com/embed/track/2sw8teIvVMRZKKYD5p795f";
+      player.width = "100%";
+      player.height = "152";
+      player.loading = "lazy";
+      player.allow = "clipboard-write; encrypted-media; fullscreen; picture-in-picture";
+      player.referrerPolicy = "strict-origin-when-cross-origin";
+      playerPanel.replaceChildren(player);
+      playerPanel.hidden = false;
+      button.setAttribute("aria-expanded", "true");
+    });
+    return;
+  }
+
   const widget = document.createElement("div");
   widget.className = "music-widget";
 
