@@ -115,7 +115,7 @@ nav ul {
 }
 
 a {
-  color: var(--accent);
+  color: var(--muted);
 }
 
 a:focus-visible {
@@ -129,7 +129,7 @@ main a {
 
 h1,
 h2 {
-  color: var(--accent);
+  color: var(--text);
   font-family: Michroma, "Arial Narrow", sans-serif;
 }
 
@@ -150,7 +150,7 @@ h2 {
 
 .lead {
   max-width: 48rem;
-  color: var(--accent);
+  color: var(--text);
   font-size: 1.35rem;
   font-weight: 700;
   line-height: 1.45;
@@ -300,9 +300,14 @@ h2 {
 
 .notice {
   padding: 1rem 1.25rem;
+  color: var(--background);
   border-left: 5px solid var(--maize);
   background: #ffffff;
   clip-path: polygon(12px 0, 100% 0, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0 100%, 0 12px);
+}
+
+.notice a {
+  color: var(--accent);
 }
 
 .profile-card {
