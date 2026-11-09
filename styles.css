@@ -601,6 +601,102 @@ h2 {
   color: var(--text);
 }
 
+.theme-audio-section {
+  display: grid;
+  grid-template-columns: 35% 65%;
+  align-items: stretch;
+  width: 92vw;
+  min-height: 360px;
+  margin: 2rem 0 2rem calc(50% - 46vw);
+  overflow: hidden;
+  color: var(--text);
+  background: #0B1419;
+  border: 1px solid var(--muted);
+  clip-path: polygon(12px 0, 100% 0, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0 100%, 0 12px);
+}
+
+.theme-audio-artwork {
+  display: grid;
+  min-height: 360px;
+  place-items: center;
+  background: radial-gradient(ellipse at center, #18313A 0%, #101F25 55%, #0B1419 100%);
+}
+
+.theme-audio-artwork img {
+  display: block;
+  width: min(72%, 15rem);
+  max-height: 15rem;
+  object-fit: contain;
+}
+
+.theme-audio-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: clamp(1.5rem, 4vw, 3.5rem);
+}
+
+.theme-audio-label {
+  margin: 0 0 0.5rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+}
+
+.theme-audio-content h2 {
+  margin: 0 0 0.75rem;
+}
+
+.theme-audio-content > p:not(.theme-audio-label) {
+  margin: 0 0 1.25rem;
+}
+
+.theme-audio-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  min-height: 3rem;
+  padding: 0.7rem 1.2rem;
+  border: 1px solid var(--muted);
+  color: var(--background);
+  background: var(--muted);
+  clip-path: polygon(12px 0, 100% 0, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0 100%, 0 12px);
+  font: 700 1rem Roboto, Arial, sans-serif;
+  cursor: pointer;
+}
+
+.theme-audio-toggle:hover {
+  background: var(--text);
+}
+
+.theme-audio-toggle:focus-visible {
+  outline: 3px solid var(--text);
+  outline-offset: 4px;
+}
+
+.theme-audio-toggle span {
+  font-size: 1.35rem;
+  line-height: 1;
+}
+
+.theme-audio-player {
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.theme-audio-player[hidden] {
+  display: none;
+}
+
+.theme-audio-player iframe {
+  display: block;
+  width: 100%;
+  border: 0;
+}
+
 .build-card-list {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 13rem), 1fr));
@@ -668,6 +764,23 @@ video {
   .home-panels {
     grid-template-columns: 1fr;
     gap: 24px;
+  }
+
+  .theme-audio-section {
+    grid-template-columns: 1fr;
+  }
+
+  .theme-audio-artwork {
+    min-height: 180px;
+  }
+
+  .theme-audio-artwork img {
+    width: min(45%, 10rem);
+    max-height: 9rem;
+  }
+
+  .theme-audio-content {
+    padding: 1.5rem;
   }
 
   .hero {
