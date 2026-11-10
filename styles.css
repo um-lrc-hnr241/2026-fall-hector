@@ -1051,13 +1051,15 @@ video {
 
 .archive-page .member-list {
   grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-rows: repeat(2, 25rem);
   gap: 1.25rem;
   margin-top: 1.25rem;
 }
 
 .archive-page .member-card {
   position: relative;
-  grid-template-columns: 45% minmax(0, 1fr);
+  grid-template-columns: 8rem minmax(0, 1fr);
+  height: 25rem;
   min-height: 0;
   overflow: hidden;
   background: linear-gradient(135deg, rgba(18, 37, 43, 0.98), rgba(7, 16, 20, 0.98));
@@ -1104,18 +1106,22 @@ video {
 }
 
 .archive-page .member-card > img {
-  min-height: 16rem;
+  width: 100%;
   height: 100%;
+  min-height: 0;
   object-fit: cover;
   object-position: center;
   border-right: 1px solid rgba(157, 191, 190, 0.45);
 }
 
 .archive-page .member-card-content {
-  align-self: center;
-  padding: 1.1rem;
-  font-size: 0.95rem;
-  line-height: 1.45;
+  display: flex;
+  flex-direction: column;
+  align-self: stretch;
+  min-width: 0;
+  padding: 0.85rem;
+  font-size: 0.88rem;
+  line-height: 1.35;
 }
 
 .archive-page .member-card h3 {
@@ -1133,7 +1139,8 @@ video {
 }
 
 .archive-page .member-card blockquote {
-  margin-top: 0.8rem;
+  min-height: 6rem;
+  margin-top: auto;
   padding-top: 0.65rem;
   font-size: 0.9rem;
 }
@@ -1154,24 +1161,24 @@ video {
   }
 
   .archive-page .member-card {
-    grid-template-columns: 42% minmax(0, 1fr);
+    grid-template-columns: 8rem minmax(0, 1fr);
   }
 
   .archive-page .member-card > img {
-    min-height: 17rem;
+    min-height: 0;
   }
 }
 
 @media (max-width: 25rem) {
   .archive-page .member-card {
-    grid-template-columns: 1fr;
+    grid-template-columns: 8rem minmax(0, 1fr);
   }
 
   .archive-page .member-card > img {
-    height: 14rem;
+    height: 100%;
     min-height: 0;
-    border-right: 0;
-    border-bottom: 1px solid rgba(157, 191, 190, 0.45);
+    border-right: 1px solid rgba(157, 191, 190, 0.45);
+    border-bottom: 0;
   }
 }
 
