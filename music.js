@@ -3,6 +3,11 @@
   if (audioSection) {
     const button = audioSection.querySelector(".theme-audio-toggle");
     const playerPanel = audioSection.querySelector(".theme-audio-player");
+    const status = document.createElement("p");
+    status.className = "theme-audio-state";
+    status.textContent = "AUDIO FILE / PLAYER OPEN";
+    status.hidden = true;
+    button.before(status);
 
     button.addEventListener("click", () => {
       const isOpen = button.getAttribute("aria-expanded") === "true";
@@ -10,6 +15,8 @@
         button.setAttribute("aria-expanded", "false");
         playerPanel.replaceChildren();
         playerPanel.hidden = true;
+        status.hidden = true;
+        audioSection.classList.remove("is-playing");
         return;
       }
 
@@ -23,6 +30,8 @@
       player.referrerPolicy = "strict-origin-when-cross-origin";
       playerPanel.replaceChildren(player);
       playerPanel.hidden = false;
+      status.hidden = false;
+      audioSection.classList.add("is-playing");
       button.setAttribute("aria-expanded", "true");
     });
     return;
