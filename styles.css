@@ -1001,3 +1001,187 @@ video {
     transform: none;
   }
 }
+
+/* Delos Host Archive */
+.archive-page {
+  min-height: 100vh;
+  background:
+    radial-gradient(ellipse at 78% 8%, rgba(45, 104, 111, 0.18), transparent 38rem),
+    linear-gradient(145deg, #0B1419 0%, #102128 52%, #0B1419 100%);
+}
+
+.archive-page main {
+  padding-top: clamp(2.5rem, 6vw, 5rem);
+  padding-bottom: clamp(3rem, 7vw, 6rem);
+}
+
+.archive-page main > .eyebrow {
+  margin-bottom: 0.75rem;
+  color: #9DBFBE;
+  font-size: 0.8rem;
+  letter-spacing: 0.2em;
+}
+
+.archive-page main > h1 {
+  margin: 0;
+  font-size: clamp(2.8rem, 7vw, 5rem);
+  letter-spacing: 0.04em;
+}
+
+.archive-page main > .lead {
+  margin-top: 0.75rem;
+  color: #F6F3EA;
+  font-size: clamp(1.1rem, 2vw, 1.35rem);
+  font-weight: 400;
+}
+
+.archive-page main section {
+  margin-top: clamp(2rem, 4vw, 3.5rem);
+}
+
+.archive-page main section > h2 {
+  margin: 0;
+  color: #9DBFBE;
+  font-family: Roboto, Arial, sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.archive-page .member-list {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.25rem;
+  margin-top: 1.25rem;
+}
+
+.archive-page .member-card {
+  position: relative;
+  grid-template-columns: 45% minmax(0, 1fr);
+  min-height: 0;
+  overflow: hidden;
+  background: linear-gradient(135deg, rgba(18, 37, 43, 0.98), rgba(7, 16, 20, 0.98));
+  border: 1px solid #9DBFBE;
+  clip-path: polygon(12px 0, 100% 0, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0 100%, 0 12px);
+  transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
+}
+
+.archive-page .member-card::after {
+  position: absolute;
+  top: 0.85rem;
+  right: 0.85rem;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-top: 1px solid rgba(157, 191, 190, 0.55);
+  border-right: 1px solid rgba(157, 191, 190, 0.55);
+  content: "";
+  pointer-events: none;
+}
+
+.archive-page .member-card:hover,
+.archive-page .member-card:focus-within {
+  z-index: 1;
+  transform: translateY(-5px);
+  border-color: #F6F3EA;
+  box-shadow: 0 0.75rem 1.75rem rgba(0, 0, 0, 0.35), 0 0 1rem rgba(157, 191, 190, 0.12);
+}
+
+.archive-page .host-index {
+  position: absolute;
+  top: 0.7rem;
+  left: 0.7rem;
+  z-index: 1;
+  display: grid;
+  width: 2.1rem;
+  height: 2.1rem;
+  place-items: center;
+  color: #F6F3EA;
+  background: rgba(11, 20, 25, 0.88);
+  border: 1px solid #9DBFBE;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.archive-page .member-card > img {
+  min-height: 16rem;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-right: 1px solid rgba(157, 191, 190, 0.45);
+}
+
+.archive-page .member-card-content {
+  align-self: center;
+  padding: 1.1rem;
+  font-size: 0.95rem;
+  line-height: 1.45;
+}
+
+.archive-page .member-card h3 {
+  margin-bottom: 0.4rem;
+  font-size: clamp(0.95rem, 1.25vw, 1.2rem);
+}
+
+.archive-page .member-favorite {
+  font-size: 0.9rem;
+}
+
+.archive-page .member-details div {
+  grid-template-columns: 4.4rem minmax(0, 1fr);
+  gap: 0.35rem;
+}
+
+.archive-page .member-card blockquote {
+  margin-top: 0.8rem;
+  padding-top: 0.65rem;
+  font-size: 0.9rem;
+}
+
+.archive-page .member-card cite {
+  color: #9DBFBE;
+}
+
+@media (max-width: 70rem) {
+  .archive-page .member-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 40rem) {
+  .archive-page .member-list {
+    grid-template-columns: 1fr;
+  }
+
+  .archive-page .member-card {
+    grid-template-columns: 42% minmax(0, 1fr);
+  }
+
+  .archive-page .member-card > img {
+    min-height: 17rem;
+  }
+}
+
+@media (max-width: 25rem) {
+  .archive-page .member-card {
+    grid-template-columns: 1fr;
+  }
+
+  .archive-page .member-card > img {
+    height: 14rem;
+    min-height: 0;
+    border-right: 0;
+    border-bottom: 1px solid rgba(157, 191, 190, 0.45);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .archive-page .member-card {
+    transition: none;
+  }
+
+  .archive-page .member-card:hover,
+  .archive-page .member-card:focus-within {
+    transform: none;
+  }
+}
