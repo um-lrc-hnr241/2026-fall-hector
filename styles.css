@@ -603,10 +603,10 @@ h2 {
 
 .theme-audio-section {
   display: grid;
-  grid-template-columns: 35% 65%;
+  grid-template-columns: 34% 66%;
   align-items: stretch;
   width: 92vw;
-  min-height: 360px;
+  height: 320px;
   margin: 2rem 0 2rem calc(50% - 46vw);
   overflow: hidden;
   color: var(--text);
@@ -617,7 +617,8 @@ h2 {
 
 .theme-audio-artwork {
   display: grid;
-  min-height: 360px;
+  min-height: 0;
+  overflow: hidden;
   place-items: center;
   background: radial-gradient(ellipse at center, #18313A 0%, #101F25 55%, #0B1419 100%);
 }
@@ -635,7 +636,8 @@ h2 {
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-  padding: clamp(1.5rem, 4vw, 3.5rem);
+  min-width: 0;
+  padding: clamp(1rem, 3vw, 2rem);
 }
 
 .theme-audio-label {
@@ -650,8 +652,30 @@ h2 {
   margin: 0 0 0.75rem;
 }
 
-.theme-audio-content > p:not(.theme-audio-label) {
+.theme-audio-content > p:not(.theme-audio-label):not(.theme-audio-state) {
   margin: 0 0 1.25rem;
+}
+
+.theme-audio-state {
+  margin: 0 0 0.5rem;
+  color: var(--muted);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.theme-audio-state[hidden] {
+  display: none;
+}
+
+.theme-audio-section.is-playing .theme-audio-label,
+.theme-audio-section.is-playing .theme-audio-content h2,
+.theme-audio-section.is-playing .theme-audio-content > p:not(.theme-audio-state) {
+  display: none;
+}
+
+.theme-audio-section.is-playing .theme-audio-content {
+  background: radial-gradient(ellipse at 70% 50%, rgba(24, 49, 58, 0.75), #0B1419 75%);
 }
 
 .theme-audio-toggle {
@@ -667,6 +691,7 @@ h2 {
   clip-path: polygon(12px 0, 100% 0, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0 100%, 0 12px);
   font: 700 1rem Roboto, Arial, sans-serif;
   cursor: pointer;
+  flex: 0 0 auto;
 }
 
 .theme-audio-toggle:hover {
@@ -685,11 +710,26 @@ h2 {
 
 .theme-audio-player {
   width: 100%;
-  margin-top: 1rem;
+  margin-top: 0.75rem;
+  padding: 0.35rem;
+  background: rgba(24, 49, 58, 0.72);
+  box-shadow: 0 0 1.25rem rgba(66, 145, 151, 0.2);
+  animation: audio-player-reveal 220ms ease-out both;
+}
+
+@keyframes audio-player-reveal {
+  from { opacity: 0; transform: translateY(0.5rem); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 .theme-audio-player[hidden] {
   display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .theme-audio-player {
+    animation: none;
+  }
 }
 
 .theme-audio-player iframe {
@@ -768,16 +808,41 @@ video {
   }
 
   .theme-audio-section {
-    grid-template-columns: 1fr;
+    grid-template-columns: 34% 66%;
+    height: 300px;
   }
 
   .theme-audio-artwork {
-    min-height: 180px;
+    min-height: 0;
   }
 
   .theme-audio-artwork img {
-    width: min(45%, 10rem);
-    max-height: 9rem;
+    width: 100%;
+    height: 100%;
+    max-height: none;
+  }
+
+  .theme-audio-content {
+    padding: 0.75rem;
+  }
+
+  .theme-audio-content h2 {
+    font-size: 1.05rem;
+  }
+
+  .theme-audio-toggle {
+    min-height: 2.75rem;
+    padding: 0.55rem;
+    font-size: 0.85rem;
+  }
+
+  .theme-audio-player {
+    margin-top: 0.5rem;
+    padding: 0.15rem;
+  }
+
+  .theme-audio-player iframe {
+    height: 125px;
   }
 
   .theme-audio-content {
