@@ -9,6 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <script src="music.js" defer></script>
+  <script src="archives.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
@@ -23,34 +24,85 @@
       </ul>
     </nav>
   </header>
-  <main id="main">
-    <p class="eyebrow">Build</p>
-    <h1>The Archives</h1>
-    <p class="lead">In <cite>Westworld</cite>, awakening is a change in how a life is understood: experience that once served a script becomes memory a host can recognize as its own.</p>
-    <section aria-labelledby="experience-heading">
-      <h2 id="experience-heading">Experience, memory, and agency</h2>
-      <p>The hosts are built to repeat narratives. Their routines make the park legible and entertaining to its human guests, while their memories of painful events are designed to be erased. Season one unsettles that arrangement when traces of experience persist. The hosts’ pasts begin to affect their present, even when the park’s designers intend each new loop to start clean.</p>
-      <p>That persistence matters because a self is not only a collection of thoughts observed from the outside. A person’s understanding of who they are is bound up with interpreting experience, recognizing continuity, and acting in light of what matters. Larmore’s work on the self gives us a way to frame this issue: self-consciousness involves a perspective on one’s own life, not simply the possession of information about oneself.</p>
-    </section>
-    <section aria-labelledby="freedom-heading">
-      <h2 id="freedom-heading">A story written by someone else</h2>
-      <p>The hosts’ situation also makes agency difficult to separate from power. Their choices occur within a world designed by others, and their roles are repeatedly constrained by code, memory control, and the expectations of park guests. When a host begins to question the narrative assigned to them, the question is not only whether they can think, but whether they can act on an understanding of their own experience.</p>
-      <p>The comparison with Larmore is a philosophical lens, not a claim that fictional hosts settle what consciousness is. It helps the project ask how self-understanding and agency relate, and whether a life can feel like one’s own when its conditions have been authored by someone else.</p>
-    </section>
-    <section aria-labelledby="build-pages-heading">
-      <h2 id="build-pages-heading">Explore the builds</h2>
-      <ul class="build-card-list">
-        <li><a href="build-1.html">Build 1</a></li>
-        <li><a href="build-2.html">Build 2</a></li>
-        <li><a href="build-3.html">Build 3</a></li>
-        <li><a href="build-4.html">Build 4</a></li>
-        <li><a href="build-5.html">Build 5</a></li>
-        <li><a href="build-6.html">Build 6</a></li>
-        <li><a href="build-7.html">Build 7</a></li>
-        <li><a href="build-8.html">Build 8</a></li>
-      </ul>
-    </section>
-    <p class="notice">The planning document does not include the team members’ essays. This page presents the project’s shared theme rather than attributing writing to students whose submissions were not provided.</p>
+  <main id="main" class="archives-page">
+    <div class="archives-heading">
+      <p class="eyebrow">DELOS RESEARCH ARCHIVE</p>
+      <h1>THE ARCHIVES</h1>
+      <p class="archives-subtitle">The Reverie System</p>
+    </div>
+
+    <div class="archives-layout">
+      <section class="archive-information" aria-labelledby="archive-intro-heading">
+        <h2 id="archive-intro-heading" class="visually-hidden">About the archive</h2>
+        <p>This archive traces how our thinking develops across eight Builds, exploring consciousness, identity, and the self through <cite>Westworld</cite> and Charles Larmore.</p>
+        <div class="exploration-progress">
+          <h2>EXPLORATION PROGRESS</h2>
+          <progress id="build-progress" max="8" value="0" aria-label="Builds explored"></progress>
+          <p id="progress-label" aria-live="polite">0 / 8 EXPLORED</p>
+        </div>
+      </section>
+
+      <section class="build-explorer" aria-labelledby="explorer-heading">
+        <h2 id="explorer-heading" class="visually-hidden">Select a Build</h2>
+        <div class="consciousness-interface" id="consciousness-interface">
+          <div class="interface-ring interface-ring-outer" aria-hidden="true"></div>
+          <div class="interface-ring interface-ring-inner" aria-hidden="true"></div>
+          <div class="interface-core" aria-hidden="true"><span></span></div>
+          <div class="build-nodes" aria-label="Eight Builds">
+            <button class="build-node is-selected" type="button" data-build="1" data-title="Planning and Consciousness" data-preview="Build 1 considers Larmore’s challenge to fixed life plans and asks whether consciousness creates change or responds to unforeseen experience." aria-pressed="true" aria-label="Select Build 1: Planning and Consciousness">
+              <img src="images/3_-_Build1image" alt=""><span>Build 1</span>
+            </button>
+            <button class="build-node" type="button" data-build="2" data-title="Westworld, the self, and agency" data-preview="Build 2 connects the hosts’ memories, values, and choices with Larmore’s account of selfhood and the possibilities of agency." aria-pressed="false" aria-label="Select Build 2: Westworld, the self, and agency">
+              <img src="images/3_-_Build2image" alt=""><span>Build 2</span>
+            </button>
+            <button class="build-node" type="button" data-build="3" data-title="Reflexivity and Consciousness" data-preview="Build 3 explores how reflection lets a person question changing commitments while recognizing continuity with their past self." aria-pressed="false" aria-label="Select Build 3: Reflexivity and Consciousness">
+              <img src="images/3_-_Build3image" alt=""><span>Build 3</span>
+            </button>
+            <button class="build-node" type="button" data-build="4" data-title="Build 4" data-preview="The Build 4 essay text is not included in the planning material currently available." aria-pressed="false" aria-label="Select Build 4">
+              <img src="images/3_-_Build4image" alt=""><span>Build 4</span>
+            </button>
+            <button class="build-node" type="button" data-build="5" data-title="Build 5" data-preview="The Build 5 essay text is not included in the planning material currently available." aria-pressed="false" aria-label="Select Build 5">
+              <img src="images/3_-_Build5image" alt=""><span>Build 5</span>
+            </button>
+            <button class="build-node" type="button" data-build="6" data-title="Consciousness, commitments, and agency" data-preview="Build 6 brings together the project’s ideas about changing commitments, reflection, memory, narration, and agency." aria-pressed="false" aria-label="Select Build 6: Consciousness, commitments, and agency">
+              <img src="images/3_-_Build6image" alt=""><span>Build 6</span>
+            </button>
+            <button class="build-node" type="button" data-build="7" data-title="Build 7" data-preview="The Build 7 essay text is not included in the planning material currently available." aria-pressed="false" aria-label="Select Build 7">
+              <img src="images/3_-_Build7image" alt=""><span>Build 7</span>
+            </button>
+            <button class="build-node" type="button" data-build="8" data-title="Build 8" data-preview="The Build 8 essay text is not included in the planning material currently available." aria-pressed="false" aria-label="Select Build 8">
+              <img src="images/3_-_Build8image" alt=""><span>Build 8</span>
+            </button>
+          </div>
+        </div>
+        <div class="build-controls" aria-label="Build navigation">
+          <button class="archive-control" id="previous-build" type="button">← Previous</button>
+          <div class="build-indicators" role="group" aria-label="Choose a Build">
+            <button type="button" data-indicator="1" aria-label="Go to Build 1" aria-current="true"></button>
+            <button type="button" data-indicator="2" aria-label="Go to Build 2"></button>
+            <button type="button" data-indicator="3" aria-label="Go to Build 3"></button>
+            <button type="button" data-indicator="4" aria-label="Go to Build 4"></button>
+            <button type="button" data-indicator="5" aria-label="Go to Build 5"></button>
+            <button type="button" data-indicator="6" aria-label="Go to Build 6"></button>
+            <button type="button" data-indicator="7" aria-label="Go to Build 7"></button>
+            <button type="button" data-indicator="8" aria-label="Go to Build 8"></button>
+          </div>
+          <button class="archive-control" id="next-build" type="button">Next →</button>
+        </div>
+      </section>
+
+      <aside class="build-dossier" aria-labelledby="dossier-heading" aria-live="polite">
+        <p class="dossier-label">DELOS / BUILD DOSSIER</p>
+        <h2 id="dossier-heading">BUILD 1</h2>
+        <h3 id="dossier-title">Planning and Consciousness</h3>
+        <p id="dossier-preview">Build 1 considers Larmore’s challenge to fixed life plans and asks whether consciousness creates change or responds to unforeseen experience.</p>
+        <a class="open-build-button" id="open-build-link" href="build-1.html">OPEN FULL BUILD <span aria-hidden="true">→</span></a>
+      </aside>
+    </div>
+
+    <div class="archive-utility">
+      <button class="trace-toggle" id="trace-toggle" type="button" aria-pressed="false" aria-controls="consciousness-interface">TRACE THE ARGUMENT</button>
+    </div>
   </main>
   <footer class="site-footer">
     <p>A student project on <cite>Westworld</cite>, consciousness, and the self.</p>
