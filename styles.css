@@ -1003,6 +1003,13 @@ video {
   }
 }
 
+.larmore-reading h3 {
+  color: var(--muted);
+  font-family: Michroma, "Arial Narrow", sans-serif;
+  font-size: 1.15rem;
+  line-height: 1.4;
+}
+
 /* Delos Host Archive */
 .archive-page {
   min-height: 100vh;
