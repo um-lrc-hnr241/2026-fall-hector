@@ -47,6 +47,16 @@
         <div class="consciousness-interface" id="consciousness-interface">
           <div class="interface-ring interface-ring-outer" aria-hidden="true"></div>
           <div class="interface-ring interface-ring-inner" aria-hidden="true"></div>
+          <svg class="neural-connections" viewBox="0 0 100 100" aria-hidden="true" focusable="false">
+            <defs>
+              <filter id="pathway-glow" x="-50%" y="-50%" width="200%" height="200%">
+                <feGaussianBlur stdDeviation="0.8" result="blur"></feGaussianBlur>
+                <feMerge><feMergeNode in="blur"></feMergeNode><feMergeNode in="SourceGraphic"></feMergeNode></feMerge>
+              </filter>
+            </defs>
+            <path class="neural-spokes" d="M50 50 L18 28 M50 50 L38 10 M50 50 L62 10 M50 50 L82 28 M50 50 L90 52 M50 50 L72 88 M50 50 L28 88 M50 50 L10 52"></path>
+            <path class="neural-pathway" d="M18 28 L38 10 L62 10 L82 28 L90 52 L72 88 L28 88 L10 52 Z"></path>
+          </svg>
           <div class="interface-core" aria-hidden="true"><img src="images/6_-_Holographichuman" alt=""></div>
           <div class="build-nodes" aria-label="Eight Builds">
             <button class="build-node is-selected" type="button" data-build="1" data-title="Planning and Consciousness" data-preview="Build 1 considers Larmore’s challenge to fixed life plans and asks whether consciousness creates change or responds to unforeseen experience." aria-pressed="true" aria-label="Select Build 1: Planning and Consciousness">
