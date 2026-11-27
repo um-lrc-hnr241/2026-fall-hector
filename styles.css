@@ -1672,3 +1672,178 @@ video {
     transition: none;
   }
 }
+
+/* Charles Larmore research dossier hero and topic navigation */
+.larmore-breadcrumb {
+  margin: 0 0 1.25rem;
+  color: var(--muted);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+}
+
+.larmore-breadcrumb span {
+  padding: 0 0.5rem;
+  color: var(--text);
+}
+
+.larmore-hero {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: center;
+  gap: clamp(2rem, 5vw, 5rem);
+  margin: 0 -1rem 1.5rem;
+  padding: clamp(1.5rem, 4vw, 3.5rem);
+  overflow: hidden;
+  border: 1px solid rgba(157, 191, 190, 0.55);
+  background: radial-gradient(ellipse at 12% 50%, rgba(41, 100, 108, 0.2), transparent 48%), linear-gradient(135deg, #18313A, #0B1419 72%);
+  clip-path: polygon(18px 0, 100% 0, 100% calc(100% - 18px), calc(100% - 18px) 100%, 0 100%, 0 18px);
+}
+
+.larmore-hero::after {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 3rem;
+  height: 3rem;
+  border-top: 1px solid var(--muted);
+  border-right: 1px solid var(--muted);
+  content: "";
+  pointer-events: none;
+}
+
+.larmore-portrait {
+  display: grid;
+  min-width: 0;
+  min-height: 18rem;
+  margin: 0;
+  padding: 1rem;
+  place-items: center;
+  border: 1px solid rgba(157, 191, 190, 0.55);
+  background: rgba(11, 20, 25, 0.72);
+}
+
+.larmore-portrait img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 34rem;
+  object-fit: contain;
+}
+
+.larmore-hero-copy {
+  min-width: 0;
+  padding: 1rem 0;
+}
+
+.larmore-hero-copy .eyebrow {
+  margin: 0 0 1rem;
+  color: var(--muted);
+  font-size: 0.85rem;
+  letter-spacing: 0.2em;
+}
+
+.larmore-hero-copy h1 {
+  margin: 0;
+  color: var(--text);
+  font-size: clamp(2rem, 4.4vw, 4rem);
+  line-height: 1.2;
+  overflow-wrap: anywhere;
+}
+
+.larmore-subtitle {
+  margin: 0.8rem 0 1.25rem;
+  color: var(--muted);
+  font-family: Michroma, "Arial Narrow", sans-serif;
+  font-size: clamp(1rem, 1.8vw, 1.35rem);
+  line-height: 1.5;
+}
+
+.larmore-hero-copy .lead {
+  margin-bottom: 0;
+  font-size: clamp(1.1rem, 1.7vw, 1.35rem);
+  font-weight: 400;
+}
+
+.larmore-topic-nav {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin: 0 0 2.5rem;
+}
+
+.larmore-topic-link {
+  display: flex;
+  min-height: 6rem;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.1rem 1.25rem;
+  color: var(--text);
+  border: 1px solid var(--muted);
+  background: linear-gradient(135deg, #18313A, #102128);
+  clip-path: polygon(14px 0, 100% 0, 100% calc(100% - 14px), calc(100% - 14px) 100%, 0 100%, 0 14px);
+  font-family: Michroma, "Arial Narrow", sans-serif;
+  font-size: clamp(0.85rem, 1.25vw, 1.05rem);
+  line-height: 1.5;
+  text-decoration: none;
+  transition: background-color 180ms ease, border-color 180ms ease, transform 180ms ease;
+}
+
+.larmore-topic-number {
+  flex: 0 0 auto;
+  color: var(--muted);
+  font-size: 0.9rem;
+  letter-spacing: 0.08em;
+}
+
+.larmore-topic-link:hover,
+.larmore-topic-link:focus-visible {
+  border-color: var(--text);
+  background: #244651;
+  transform: translateY(-3px);
+}
+
+.larmore-topic-link:focus-visible {
+  outline: 3px solid var(--text);
+  outline-offset: 4px;
+}
+
+@media (max-width: 48rem) {
+  .larmore-hero {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.5rem;
+    margin-right: 0;
+    margin-left: 0;
+  }
+
+  .larmore-portrait {
+    min-height: 0;
+  }
+
+  .larmore-portrait img {
+    width: auto;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 36rem) {
+  .larmore-topic-nav {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .larmore-topic-link {
+    min-height: 4.75rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .larmore-topic-link {
+    transition: none;
+  }
+
+  .larmore-topic-link:hover,
+  .larmore-topic-link:focus-visible {
+    transform: none;
+  }
+}
