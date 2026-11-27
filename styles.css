@@ -1215,8 +1215,8 @@ video {
 .archives-page {
   position: relative;
   min-height: calc(100vh - 75px);
-  padding-top: clamp(2rem, 5vw, 4rem);
-  padding-bottom: 2rem;
+  padding-top: clamp(1rem, 2vw, 2rem);
+  padding-bottom: 1rem;
   overflow: hidden;
   background:
     radial-gradient(ellipse at 53% 48%, rgba(36, 105, 112, 0.16), transparent 34rem),
@@ -1240,7 +1240,7 @@ video {
 }
 
 .archives-heading {
-  margin-bottom: clamp(1.5rem, 3vw, 2.75rem);
+  margin-bottom: clamp(0.5rem, 1vw, 1rem);
 }
 
 .archives-heading .eyebrow {
@@ -1340,7 +1340,7 @@ video {
 
 .consciousness-interface {
   position: relative;
-  width: min(100%, 38rem);
+  width: min(100%, 38rem, max(24rem, calc(100vh - 21rem)));
   aspect-ratio: 1;
   margin: 0 auto;
   border: 1px solid rgba(157, 191, 190, 0.28);
@@ -1995,4 +1995,10 @@ html {
   html {
     scroll-behavior: auto;
   }
+}
+
+.archives-page + .site-footer + .music-widget {
+  position: static;
+  width: fit-content;
+  margin: 1rem clamp(1rem, 4vw, 4rem) 1.5rem auto;
 }
