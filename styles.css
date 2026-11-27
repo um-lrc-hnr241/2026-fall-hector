@@ -1396,12 +1396,12 @@ video {
   transform: translate(-50%, -50%);
 }
 
-.interface-core span {
-  width: 45%;
-  aspect-ratio: 1;
-  border: 1px solid rgba(157, 191, 190, 0.65);
-  border-radius: 50%;
-  box-shadow: 0 0 1rem rgba(83, 196, 205, 0.65);
+.interface-core img {
+  display: block;
+  width: 82%;
+  height: 82%;
+  object-fit: contain;
+  filter: drop-shadow(0 0 0.45rem rgba(83, 196, 205, 0.55));
 }
 
 .build-nodes {
