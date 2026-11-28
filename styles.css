@@ -1221,7 +1221,8 @@ video {
   overflow: hidden;
   background:
     radial-gradient(ellipse at 53% 48%, rgba(36, 105, 112, 0.16), transparent 34rem),
-    linear-gradient(135deg, #0B1419 0%, #102128 52%, #0B1419 100%);
+    linear-gradient(135deg, rgba(11, 20, 25, 0.78) 0%, rgba(16, 33, 40, 0.74) 52%, rgba(11, 20, 25, 0.82) 100%),
+    url("images/6_-_Laboratory") center center / cover no-repeat;
 }
 
 .archives-page::before {
